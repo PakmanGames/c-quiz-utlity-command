@@ -1,0 +1,27 @@
+name: build script for quiz.c		
+
+on:							
+  push:
+    branches: [ "main" ]			
+
+jobs:
+  build:						
+    runs-on: ubuntu-latest			
+    steps:
+      - uses: actions/checkout@v4		
+
+      - name: build quiz			
+        run: gcc -o bin/quiz quiz.c		
+
+      - name: upload binary			
+        uses: actions/upload-artifact@v4	
+        with:
+          name: Quiz			
+          path: ./quiz				
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run quiz command
+        run: quiz
+
