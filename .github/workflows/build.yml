@@ -39,3 +39,12 @@ jobs:
 
       - name: Test answering question 2 incorrectly
         run: ./quiz -2 "What sky?"
+
+      - name: Test -3 flag
+        run: ./quiz -3
+
+      - name: Test answering question 3 correctly
+        run: ./quiz -3 "3"
+
+      - name: Test answering question 3 incorrectly
+        run: ./quiz -3 "2"

@@ -51,6 +51,20 @@ int main(int argc, char *argv[]) {
                 printf("Is the sky blue?\n");
             }
             return EXIT_SUCCESS;
+        } else if (strcmp(argv[1], "-3") == 0) {
+            // -3 flag, for question 3
+            if (argc == 3) {
+                // User tries to answer
+                if (strcmp(argv[2], "3") == 0) {
+                    // Print response when answer is correct
+                    printf("That is correct, make sure you double check your assignment before you submit.\n");
+                } else {
+                    // Print hunt when its incorrect
+                    printf("No silly, did you even read the assignment doc?\n");
+                }
+            } else {
+                printf("How many questions does this quiz have?\n");
+            }
         } else if (strcmp(argv[1], "--help") == 0) {
             // Link to help resource when user uses --help flag
             printf("Refer to the README found at https://github.com/Sam-Scott-McMaster/the-ci-pipeline-assignment-PakmanGames\n");
