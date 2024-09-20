@@ -8,16 +8,19 @@ jobs:
   build:						
     runs-on: ubuntu-latest			
     steps:
-      - uses: actions/checkout@v4		
+      - uses: actions/checkout@v4	
+
+      - name: create bin folder
+        run: mkdir bin	
 
       - name: build quiz			
-        run: gcc -o bin/quiz quiz.c		
+        run: make bin/quiz		
 
       - name: upload binary			
         uses: actions/upload-artifact@v4	
         with:
           name: Quiz			
-          path: ./quiz				
+          path: ./bin				
 
   test:
     runs-on: ubuntu-latest
