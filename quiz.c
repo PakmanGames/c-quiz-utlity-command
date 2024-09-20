@@ -28,13 +28,14 @@ int main(int argc, char *argv[]) {
                 printf("Is the sky blue?\n");
             }
         } else if (strcmp(argv[1], "--help") == 0) {
-            // do help stuff show help
+            printf("Linux-style help (try 'cat --help' or similar for examples)\n");
         } else {
-            // oh not try --help function
+            printf("Usage: quiz [-#] [<answer>]\n");
+            printf("Try 'quiz --help' for more information.\n");
         }
     } else {
-        // oh not try --help function
-        printf("try --help\n");
+        printf("Usage: quiz [-#] [<answer>]\n");
+        printf("Try 'quiz --help' for more information.\n");
     }
     return EXIT_SUCCESS;
 }
