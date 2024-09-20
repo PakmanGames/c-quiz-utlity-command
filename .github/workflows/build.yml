@@ -10,21 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4	
 
-      - name: create bin folder
-        run: mkdir bin	
+      - name: Build quiz			
+        run: gcc -o quiz quiz.c		
 
-      - name: build quiz			
-        run: make bin/quiz		
-
-      - name: upload binary			
+      - name: Upload binary			
         uses: actions/upload-artifact@v4	
         with:
-          name: Quiz			
-          path: ./bin				
+          name: quiz			
+          path: ./quiz			
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: run quiz command
-        run: quiz
-
+      - name: Test --help flag
+        run: ./quiz --help
