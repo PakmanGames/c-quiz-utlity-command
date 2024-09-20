@@ -21,3 +21,21 @@ jobs:
 
       - name: Test --help flag
         run: ./quiz --help
+
+      - name: Test -1 flag
+        run: ./quiz -1
+
+      - name: Test answering question 1 correctly
+        run: ./quiz -1 "No"
+
+      - name: Test answering question 1 incorrectly
+        run: ./quiz -1 "Yes"
+
+      - name: Test -2 flag
+        run: ./quiz -2
+
+      - name: Test answering question 2 correctly
+        run: ./quiz -2 "Yes"
+
+      - name: Test answering question 2 incorrectly
+        run: ./quiz -2 "What sky?"
