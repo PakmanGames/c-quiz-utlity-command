@@ -4,20 +4,28 @@
 
 int main(int argc, char *argv[]) {
     if (argc > 1) {
-        // yeah do stuff
         if (strcmp(argv[1], "-1") == 0) {
-            // do more stuff
             if(argc == 3) {
-                // answer to question
+                if (strcmp(argv[2], "No") == 0) {
+                    printf("That is correct! Did you show your work with a truth table though?\n");
+                } else {
+                    printf("That is incorrect, a tautology is an expression that always evaluates to true.\n");
+                    printf("Please try again, maybe use a truth table to determine the answer.\n");
+                }
             } else {
-                // only 1 answer to q please
+                printf("Is the boolean expression ~(p = ~q) a tautology?\n");
             }
         } else if (strcmp(argv[1], "-2") == 0) {
-            // even more stuff
             if (argc == 3) {
-                // answer to q
+                if (strcmp(argv[2], "Yes") == 0 || strcmp(argv[2], "No") == 0) {
+                    printf("That is correct! That question is a proposition.\n");
+                    printf("The sky can be blue or not blue but not both at the same time.\n");
+                    printf("Therefore the answer can be both 'Yes' or 'No'.\n");
+                } else {
+                    printf("That is incorrect, perhaps it can be 'Yes' or 'No'?\n");
+                }
             } else {
-                // only 1 answe to q please
+                printf("Is the sky blue?\n");
             }
         } else if (strcmp(argv[1], "--help") == 0) {
             // do help stuff show help
